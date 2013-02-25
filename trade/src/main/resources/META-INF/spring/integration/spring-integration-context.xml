@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:int="http://www.springframework.org/schema/integration"
 	xmlns:int-twitter="http://www.springframework.org/schema/integration/twitter"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/integration
-		http://www.springframework.org/schema/integration/spring-integration.xsd
-		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/integration/twitter
-		http://www.springframework.org/schema/integration/twitter/spring-integration-twitter.xsd
-		http://www.springframework.org/schema/context
-		http://www.springframework.org/schema/context/spring-context.xsd">
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd 
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/twitter http://www.springframework.org/schema/integration/twitter/spring-integration-twitter.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
 
+	<import resource="classpath:/META-INF/spring/app-context.xml" />
 	<context:component-scan base-package="se.kumliens.hoggaster.trade"/>
+	
+	<rabbit:connection-factory
+    	id="rabbitConnectionFactory"
+    	host="localhost"
+    	password="testpwd"
+    	port="1238"
+    	username="testuser" />   
+    
+    
 
 	<!-- See also: http://static.springsource.org/spring-integration/reference/htmlsingle/#twitter -->
 	<int-twitter:search-inbound-channel-adapter
