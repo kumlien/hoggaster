@@ -5,11 +5,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+
+import com.mongodb.DB;
 
 import se.kumliens.hoggaster.domain.MarketMessage;
 import se.kumliens.hoggaster.repo.MarketMessageDAO;
@@ -27,7 +30,7 @@ public class MongoMarketMessageDAO implements MarketMessageDAO {
 
 	@Override
 	public void delete(Set<MarketMessage> messages) {
-		Set<String> ids = new HashSet<String>();
+		Set<ObjectId> ids = new HashSet<ObjectId>();
 		for(MarketMessage message : messages) {
 			ids.add(message.getId());
 		}

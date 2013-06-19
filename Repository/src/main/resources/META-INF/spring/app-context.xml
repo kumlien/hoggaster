@@ -19,6 +19,10 @@
 
 	<context:component-scan base-package="se.kumliens.hoggaster" />
     
-    <mongo:db-factory id="mongoDbFactory" dbname="hoggaster" host="127.0.0.1" port="1234" username="test_user" password="test_pass"/>
+    <mongo:db-factory id="mongoDbFactory" dbname="hoggaster" host="127.0.0.1" port="27017"/>
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean>
+    
 
 </beans>

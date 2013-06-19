@@ -2,15 +2,16 @@ package se.kumliens.hoggaster.domain;
 
 import java.util.Date;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="market_messages")
 public class MarketMessage {
 	
 	@Id
-	private String id;
+	private ObjectId id;
 	
 	@Indexed
 	private String instrument;
@@ -43,11 +44,11 @@ public class MarketMessage {
 		this.date = date;
 	}
 
-	public String getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 }
