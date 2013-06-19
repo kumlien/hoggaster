@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class MarketMessage {
 	
 	@Id
-	private ObjectId id;
+	private String id;
 	
 	@Indexed
 	private String instrument;
@@ -44,11 +44,11 @@ public class MarketMessage {
 		this.date = date;
 	}
 
-	public ObjectId getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(ObjectId id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 }
