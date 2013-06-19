@@ -30,19 +30,19 @@ public class MongoMarketMessageDAO implements MarketMessageDAO {
 
 	@Override
 	public void delete(Set<MarketMessage> messages) {
-		Set<String> ids = new HashSet<String>();
-		for(MarketMessage message : messages) {
-			ids.add(message.getId());
-		}
-		Query query = new Query(Criteria.where("_id").in(ids));
-		mongoDb.remove(query, MarketMessage.class);
+//		Set<String> ids = new HashSet<String>();
+//		for(MarketMessage message : messages) {
+//			ids.add(message.getId());
+//		}
+//		Query query = new Query(Criteria.where("_id").in(ids));
+//		mongoDb.remove(query, MarketMessage.class);
+		repo.delete(messages);
 		
 	}
 
 	@Override
 	public List<MarketMessage> findByInstrument(String instrument) {
-		Query query = new Query(Criteria.where("instrument").is(instrument));
-		return mongoDb.find(query, MarketMessage.class);
+		return repo.findByInstrument(instrument);
 	}
 
 
