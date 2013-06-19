@@ -30,14 +30,7 @@ public class MongoMarketMessageDAO implements MarketMessageDAO {
 
 	@Override
 	public void delete(Set<MarketMessage> messages) {
-//		Set<String> ids = new HashSet<String>();
-//		for(MarketMessage message : messages) {
-//			ids.add(message.getId());
-//		}
-//		Query query = new Query(Criteria.where("_id").in(ids));
-//		mongoDb.remove(query, MarketMessage.class);
-		repo.delete(messages);
-		
+		repo.delete(messages);	
 	}
 
 	@Override
