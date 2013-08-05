@@ -1,5 +1,11 @@
 package se.kumliens.hoggaster.trade.instrument;
 
+/**
+ * http://sv.wikipedia.org/wiki/International_Securities_Identification_Number
+ * http://en.wikipedia.org/wiki/International_Securities_Identification_Number
+ * @author svante2
+ *
+ */
 public class ISIN implements InstrumentID {
 	
 	private final String isinCode;

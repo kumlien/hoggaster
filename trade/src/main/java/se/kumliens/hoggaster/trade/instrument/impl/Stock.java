@@ -2,6 +2,7 @@ package se.kumliens.hoggaster.trade.instrument.impl;
 
 import java.util.List;
 
+import se.kumliens.hoggaster.trade.instrument.ISIN;
 import se.kumliens.hoggaster.trade.instrument.Instrument;
 import se.kumliens.hoggaster.trade.instrument.InstrumentID;
 
@@ -33,13 +34,13 @@ public class Stock implements Instrument {
 	}
 
 	@Override
-	public String getIsin() {
+	public ISIN getIsin() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setIsin(String isin) {
+	public void setIsin(ISIN isin) {
 		// TODO Auto-generated method stub
 		
 	}

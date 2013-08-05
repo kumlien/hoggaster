@@ -12,8 +12,8 @@ public interface Instrument {
 	
 	String getName();
 	
-	String getIsin();
+	ISIN getIsin();
 	
-	void setIsin(String isin);
+	void setIsin(ISIN isin);
 
 }

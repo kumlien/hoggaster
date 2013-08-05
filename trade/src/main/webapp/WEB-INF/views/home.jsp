@@ -4,7 +4,7 @@
 <html>
     <head>
 
-        <title>Welcome to Spring Integration</title>
+        <title>Welcome to Hoggaster</title>
 
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
@@ -22,7 +22,7 @@
         <div class="container">
             <div id="header" class="prepend-1 span-22 append-1 last">
                 <h1 class="loud">
-                    Welcome to Spring Integration
+                    Welcome to Hoggaster!
                 </h1>
                 <div>
                     <form:form id="formId">
@@ -65,6 +65,5 @@
             });
 
         </script>
-
     </body>
 </html>

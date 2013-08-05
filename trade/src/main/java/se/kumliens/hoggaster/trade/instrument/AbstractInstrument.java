@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class AbstractInstrument implements Instrument {
 	
-	private String isin;
+	private ISIN isin;
 	
 	private String name;
 	
@@ -34,12 +34,12 @@ public abstract class AbstractInstrument implements Instrument {
 	}
 
 	@Override
-	public String getIsin() {
+	public ISIN getIsin() {
 		return isin;
 	}
 
 	@Override
-	public void setIsin(String isin) {
+	public void setIsin(ISIN isin) {
 		this.isin = isin;
 	}
 	
